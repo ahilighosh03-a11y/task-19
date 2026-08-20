@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Booking Web App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <h2 class="logo">Logo</h2>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <span class="username">Username</span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+      </div>
+    </nav>
+    <main class="main-container">
+      <section class="left-section">
+        <div class="card">
+          <h3>Added Items</h3>
+          <div id="cartList" class="cart-List">
+            <div class="empty-cart" id="emptyCart">
+              <div class="info-icon">ⓘ</div>
+              <p><strong>No items added</strong></p>
+              <small>Add items to the cart from the services bar</small>
+            </div>
+            <table class="cart-tabble hidden" id="cartTable">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Service Name</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody id="cartTableBody"></tbody>
+            </table>
+          </div>
+          <div class="total-amount-container">
+            <span>Total Amount</span>
+            <span class="total-price" id="totalAmount">₹0</span>
+          </div>
+        </div>
+        <div class="card booking-card">
+          <h3>Book Now</h3>
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter full name" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" placeholder="Enter email ID" required> 
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="number" id="phone" placeholder="Enter Phone Number" required>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn" id="bookNowBtn" disabled>Book Now</button>
+          </form>
+        </div>
+      </section>
+      <section class="right-section">
+        <div class="card service-card">
+          <h2>Browse Our Services</h2>
+          <p class="subtitle">Click on the add to the cart button to add the services to your cart or press skip</p>
+          <div class="service-display service-item" data-name="Dry Cleaning" data-price="200">
+            <img src="https://paramatex.com/wp-content/uploads/2023/05/paramatex-dry-cleaning.jpg" alt="Dry Cleaning">
+            <h3>Dry Cleaning</h3>
+            <p class="service-price">₹200.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="service-display service-item hidden" data-name="Leather and Suede Cleaning" data-price="999">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgmT7Gd0pocoGYhTlQb2RCA_68u5FXrX9ZnOeOCC76nBcCEDqqaKj5Bmo&s=10" alt="Leather and Suede Cleaning">
+            <h3>Leather and Suede Cleaning</h3>
+            <p class="service-price">₹999.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="service-display service-item hidden" data-name="Ironing" data-price="30">
+            <img src="https://img.magnific.com/free-photo/female-hands-ironing-wrinkled-clothes-ironing-board_259150-58449.jpg?semt=ais_hybrid&w=740&q=80" alt="Ironing">
+            <h3>Ironing</h3>
+            <p class="service-price">₹30.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="service-display service-item hidden" data-name="Wedding Dress Cleaning" data-price="2400">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpMTus-smtGK80QChxThEHoOnIPeVwNzSsyoiFgh1-cj77SoyQ-gSyKO3G&s=10" alt="Wedding Dress Cleaning">
+            <h3>Wedding Dress Cleaning</h3>
+            <p class="service-price">₹2400.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="service-display service-item hidden" data-name="Wash And Fold" data-price="140">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5AzLqKI5cIwTOPRth4gC3cdIFwKneOllKTRkJYX2-zw0zIpn1jLziBSQ&s=10" alt="Wash And Fold">
+            <h3>Wash and Fold</h3>
+            <p class="service-price">₹140.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="service-display service-item hidden" data-name="Stain Removal" data-price="500">
+            <img src="https://spotlesswasche.com/wp-content/uploads/2021/06/Stain-Removl.webp" alt="Stain Removal">
+            <h3>Stain Removal</h3>
+            <p class="service-price">₹500.00</p>
+            <div class="service-actions">
+              <button class="btn-skip">Skip Item ⏩</button>
+              <button class="btn-add">Add Item ➕</button>
+            </div>
+          </div>
+          <div class="info-footer">
+            <span class="info-dot"></span>
+            <p>Add the items to the cart and book now</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
